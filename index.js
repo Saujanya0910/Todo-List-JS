@@ -2,34 +2,41 @@ const addBtn = document.querySelector('.addBtn')
 var inputValue = document.querySelector('.todo-item')
 const container = document.querySelector('.container ul')
 
-class item {
-    constructor(itemName) {
-        this.createUL(itemName)
+class item{
+	constructor(name){
+		this.createItem(name)
     }
-
-    createUL(itemName) {
-        let input = document.createElement('input')
-        input.type = "text"
-        input.value = itemName
-        input.disabled = true
-        input.classList.add('item')
-
-        let itemBox = document.createElement('li')
+    
+    createItem(name){
+    	var itemBox = document.createElement('li')
         itemBox.classList.add('todo-item')
 
-        let editButton = document.createElement('button')
-        editButton.innerHTML = '<i class="fas fa-pencil-alt"></i>'
-        editButton.classList.add('editBtn')
-        
-        let deleteButton = document.createElement('button')
-        deleteButton.innerHTML = '<i class="far fa-trash-alt"></i>'
-        deleteButton.classList.add('deleteBtn')
+    	var input = document.createElement('input')
+    	input.type = "text"
+    	input.disabled = true
+    	input.value = name
+    	input.classList.add('item')
 
-        container.appendChild(itemBox)
+    	var editButton = document.createElement('button')
+    	editButton.classList.add('editBtn')
+    	editButton.innerHTML = '<i class="fas fa-pencil-alt"></i>'
+
+    	var deleteButton = document.createElement('button')
+    	deleteButton.classList.add('deleteBtn')
+    	deleteButton.innerHTML = '<i class="far fa-trash-alt"></i>'
+
+    	container.appendChild(itemBox)
 
         itemBox.appendChild(input)
         itemBox.appendChild(editButton)
         itemBox.appendChild(deleteButton)
+
+        editButton.addEventListener('click', () => this.edit(input, name))
+    }
+
+    edit(input, name) {
+        input.disabled = false
+        input.focus()
     }
 }
 
