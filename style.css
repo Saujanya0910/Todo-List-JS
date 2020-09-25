@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    height: 100%;
+    width: 100%;
+    background-color: #23242D;
+}
+
+h1 {
+    font-size: 4rem;
+    font-weight: 500;
+    margin: 1rem 0 3rem;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+}
+
+h1 .head-style {
+    font-weight: 800;
+    color: lime;
+}
+
+#input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#input #new-item {
+    padding: 0.5rem 1rem;
+    height: 50px;
+    background-color: #ffffff;
+    width: 450px;
+    font-size: 1.2rem;
+    margin: 0.25rem;
+    border-radius: 25px;
+    border: none;
+}
+
+.addBtn {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: none;
+    background-color: lime;
+    color: #ffffff;
+    margin: 4px;
+    cursor: pointer;
+}
+
+.addBtn i{
+    font-size: 1.1rem;
+}
+
+.addBtn:hover {
+    transition: 0.5s;
+    opacity: 0.5;
+}
+
+.addBtn:active {
+    position: relative;
+    top: 4px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.container ul {
+    list-style: none;
+}
+
+.todo-item {
+    padding: 0.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 4px solid #ffffff;
+}
+
+.todo-item .item {
+    background: none;
+    outline: none;
+    color: #ffffff;
+    border: none;
+    width: 350px;
+    font-size: 1.4rem;
+    /* text-align: center; */
+}
+
+.container .editBtn {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: none;
+    background-color: transparent;
+    color: #ffffff;
+    margin: 4px;
+    font-size: 1.4rem;
+    /* padding: 20px auto; */
+    margin: 0 0.75rem;
+    cursor: pointer;
+}
+
+.editBtn:hover {
+    transition: 0.5s;
+    opacity: 0.5;
+}
+
+.editBtn:active {
+    position: relative;
+    top: 2px;
+}
+
+.container .deleteBtn {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: none;
+    background-color: transparent;
+    color: #ffffff;
+    margin: 4px;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+.deleteBtn:hover {
+    transition: 0.5s;
+    opacity: 0.5;
+}
+
+.deleteBtn:active {
+    position: relative;
+    top: 2px;
+}
+
+.container i[class*="pencil"] {
+    color: #a2d5f2;
+    cursor: pointer;
+}
+
+.container i[class*="trash"] {
+    color: red;
+    cursor: pointer;
+}
+
+footer {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #ffffff;
+}
