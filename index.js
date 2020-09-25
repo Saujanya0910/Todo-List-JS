@@ -1,5 +1,5 @@
-const addBtn = document.querySelector('.addBtn')
-var inputValue = document.querySelector('.todo-item')
+const addButton = document.querySelector('.addBtn')
+var inputBox = document.querySelector('.add-item')
 const container = document.querySelector('.container ul')
 
 class item{
@@ -31,15 +31,44 @@ class item{
         itemBox.appendChild(editButton)
         itemBox.appendChild(deleteButton)
 
-        editButton.addEventListener('click', () => this.edit(input, name))
+        editButton.addEventListener('click', () => this.editItem(input))
+
+        deleteButton.addEventListener('click', () => this.deleteItem(itemBox))
     }
 
-    edit(input, name) {
-        input.disabled = false
-        input.focus()
+    editItem(input) {
+        if( input.disabled == true) {
+            input.disabled = false
+            input.focus()
+        }
+        else {
+            input.disabled = !input.disabled
+        }
+    }
+
+    deleteItem(item) {
+        container.removeChild(item)
+        alert('Item deleted.')
     }
 }
 
-new item("Item1")
-new item("Item2")
-new item("Item3")
+function addItem() {
+    if(inputBox.value !== "") {
+        new item(inputBox.value)
+        inputBox.value = ""
+        alert('Item added.')
+    }
+    else {
+        alert('Item is blank, please enter data.')
+    }
+}
+
+addButton.addEventListener('click', addItem)
+
+window.addEventListener('keydown', (e)=> {
+    if(e.which == 13) {
+        addItem()
+    }
+})
+
+new item("Default item (feel free to delete)")
