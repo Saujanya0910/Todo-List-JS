@@ -100,9 +100,6 @@ window.addEventListener('keydown', (e)=> {
     }
 })
 
-// default item 
-new item("Default item (feel free to delete)")
-
 // display all stored items  
 for (var i = 0 ; i < todos.length ; i++){
     new item(todos[i]);
